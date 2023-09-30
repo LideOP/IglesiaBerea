@@ -14,9 +14,9 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => '',
     'title_prefix' => '',
-    'title_postfix' => '',
+    'title_postfix' => '| home',
 
     /*
     |--------------------------------------------------------------------------
@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'use_ico_only' => false,
+    'use_ico_only' => true,
     'use_full_favicon' => false,
 
     /*
@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Iglesia Biblica </b>BEREA',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -130,11 +130,11 @@ return [
     */
 
     'usermenu_enabled' => true,
-    'usermenu_header' => false,
-    'usermenu_header_class' => 'bg-primary',
-    'usermenu_image' => false,
-    'usermenu_desc' => false,
-    'usermenu_profile_url' => false,
+    'usermenu_header' => true,
+    'usermenu_header_class' => 'bg-info',
+    'usermenu_image' => true,
+    'usermenu_desc' => true,
+    'usermenu_profile_url' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -150,8 +150,8 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
+    'layout_fixed_sidebar' => false, 
+    'layout_fixed_navbar' => true,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
 
@@ -210,7 +210,7 @@ return [
     |
     */
 
-    'sidebar_mini' => 'lg',
+    'sidebar_mini' => 'true',
     'sidebar_collapse' => false,
     'sidebar_collapse_auto_size' => false,
     'sidebar_collapse_remember' => false,
@@ -218,7 +218,7 @@ return [
     'sidebar_scrollbar_theme' => 'os-theme-light',
     'sidebar_scrollbar_auto_hide' => 'l',
     'sidebar_nav_accordion' => true,
-    'sidebar_nav_animation_speed' => 300,
+    'sidebar_nav_animation_speed' => 250,
 
     /*
     |--------------------------------------------------------------------------
@@ -232,11 +232,11 @@ return [
     |
     */
 
-    'right_sidebar' => false,
+    'right_sidebar' => true,
     'right_sidebar_icon' => 'fas fa-cogs',
     'right_sidebar_theme' => 'dark',
     'right_sidebar_slide' => true,
-    'right_sidebar_push' => true,
+    'right_sidebar_push' => false,
     'right_sidebar_scrollbar_theme' => 'os-theme-light',
     'right_sidebar_scrollbar_auto_hide' => 'l',
 
@@ -292,96 +292,76 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
-            'topnav_right' => true,
+            'text' => 'search',
+            'search' => true,
+            'topnav' => true
+        ],
+        [
+            'text' => 'Vision/Mision',
+            'url' => '#',
+            'topnav_right' => true
+        ],
+        [
+            'text' => 'Quienes somos',
+            'url' => '#',
+            'topnav_right' => true
+        ],
+        [
+            'text' => 'Sing me',
+            'url' => '#',
+            'topnav_right' => true
+        ],
+        [
+            'text' => 'Log in',
+            'url' => '#',
+            'topnav_right' => true
         ],
         [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
-
         // Sidebar items:
+        
         [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            'text' => 'Reuniones',
+            'url'  => 'reuniones',
+            'icon' => 'fas fa-fw fa-user-group',
         ],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
+            'text' => 'Talleres y conferencias',
+            'url'  => 'talleres',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Actividades',
+            'url'  => 'actividades',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+       
+        ['header' => 'Contactanos'],
+        [
+            'text'       => 'Facebook',
+            'icon' => 'fa-brands fa-facebook-f',
+            'icon_color' => 'blue',
+            'url'        => '#',
         ],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
+            'text'       => 'Youtube',
             'icon_color' => 'red',
             'url'        => '#',
+            'icon' => 'fa-brands fa-youtube',
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
+            'text'       => 'Whatsapp',
+            'icon_color' => 'green',
             'url'        => '#',
+            'icon' => 'fa-brands fa-whatsapp',
         ],
         [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
+            'text'       => 'Telefono',
+            'icon_color' => 'black',
             'url'        => '#',
+            'icon' => 'fa-solid fa-phone',
         ],
     ],
 

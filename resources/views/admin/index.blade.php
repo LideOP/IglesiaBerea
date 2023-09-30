@@ -1,6 +1,8 @@
 @extends('adminlte::page')
 
-@section('title', 'Lide OP')
+@section('title', 'Iglesia Berea')
+
+
 
 @section('content_header')
     <h1>Iglesia Biblica Berea</h1>
