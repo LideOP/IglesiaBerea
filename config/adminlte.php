@@ -82,6 +82,7 @@ return [
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Basic-Configuration
     |
     */
+    /*
 
     'auth_logo' => [
         'enabled' => false,
@@ -94,7 +95,7 @@ return [
         ],
     ],
 
-    /*
+    
     |--------------------------------------------------------------------------
     | Preloader Animation
     |--------------------------------------------------------------------------
@@ -253,7 +254,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => '/',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -324,13 +325,13 @@ return [
         
         [
             'text' => 'Reuniones',
-            'url'  => 'reuniones',
+            'route'  => 'admin.reuniones.index',
             'icon' => 'fas fa-fw fa-user-group',
         ],
         [
             'text' => 'Talleres y conferencias',
             'url'  => 'talleres',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fab fa-fw fa-buffer',
         ],
         [
             'text' => 'Actividades',
@@ -446,12 +447,12 @@ return [
             ],
         ],
         'Sweetalert2' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                    'asset' => true,
+                    'location' => 'vendor/sweetalert2/sweetalert2.all.min.js',
                 ],
             ],
         ],

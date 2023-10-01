@@ -2,7 +2,7 @@
 
 @section('title', 'Iglesia Berea')
 
-
+@section('Sweetalert2',true)
 
 @section('content_header')
     <h1>Iglesia Biblica Berea</h1>
@@ -17,5 +17,7 @@
 @stop
 
 @section('js')
-    <script> console.log('Hi!'); </script>
+    <script>
+        Console.log('Hi');
+    </script>
 @stop
