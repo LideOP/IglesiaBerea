@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('adminlte::page')
+      
+@section('title', 'Iglesia Berea')
+@section('content_header')
+    <h1>Pagina Principal </h1>
+@stop
 
-        <title>Home</title>
-
-        
-    </head>
-    <body class="antialiased">
-        
-        <h1>pagina inicio</h1>
-          
-    </body>
-</html>
+@section('content')
+<div class="Img">
+    <h1>IGLESIA BIBLICA BEREA</h1>
+    <div class="image-row">
+        <img src="{{ asset('/logo/igle.jpg') }} " width="450" height="350">
+        <img src="{{ asset('/logo/jovenes.jpg') }} " width="450" height="350">
+    </div>
+</div>
+@stop

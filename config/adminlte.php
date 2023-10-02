@@ -314,6 +314,7 @@ return [
         ],
         [
             'text' => 'Log in',
+            'route'  => 'admin.login',
             'url' => '#',
             'topnav_right' => true
         ],

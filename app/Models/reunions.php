@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class reunions extends Model
 {
     use HasFactory;
+    protected $fillade=['dia','horaI','horaF','expositor','tema'];
 }

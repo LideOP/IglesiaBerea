@@ -30,6 +30,16 @@ class ReunionesController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'dia'=> 'required',
+            'horaI'=> 'required',
+            'horaF'=> 'required',
+            'expositor'=> 'required',
+            'tema'=> 'required'
+        ]);
+        return $request->all();
+        // $reunion = reunions::create($request->all());
+        // return redirect()->route('admin.reuniones.edit', $reunion);
 
     }
 
