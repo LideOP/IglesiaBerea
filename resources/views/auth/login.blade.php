@@ -1,9 +1,9 @@
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
-            <img src="{{ asset('/vendor/adminlte/dist/img/ibb.png') }}" alt="Logo">
+        <img src="{{ asset('/logo/ibb.png') }}">
 
-            
+            <!-- <authentication-card-logo> -->
         </x-slot>
         
         <x-validation-errors class="mb-4" />

@@ -7,6 +7,7 @@
 @stop
 
 @section('content')
+
     <div class="card">
         <div class="card-body">
             {!! Form::open(['route' => 'admin.reuniones.store'])!!}
@@ -20,16 +21,16 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('horaI','Hora de Inicio')!!}
-                    {!! Form::text('horaI',null,['class'=>'form-control', 'placeholder' => 'Ingrese la hora de inicio'])!!}
+                    {!! Form::label('hora_inicio','Hora de Inicio')!!}
+                    {!! Form::text('hora_inicio',null,['class'=>'form-control', 'placeholder' => 'Ingrese la hora de inicio'])!!}
                     @error('horaI')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('horaF','Hora de culminacion')!!}
-                    {!! Form::text('horaF',null,['class'=>'form-control', 'placeholder' => 'Ingrese la hora que finalizara'])!!}
+                    {!! Form::label('hora_final','Hora de culminacion')!!}
+                    {!! Form::text('hora_final',null,['class'=>'form-control', 'placeholder' => 'Ingrese la hora que finalizara'])!!}
                     @error('horaF')
                         <span class="text-danger">{{$message}}</span>
                     @enderror

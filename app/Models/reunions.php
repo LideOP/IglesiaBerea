@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class reunions extends Model
 {
     use HasFactory;
-    protected $fillade=['dia','horaI','horaF','expositor','tema'];
+    //protected $guarded = ['id'];
+    protected $fillable=['dia','hora_inicio','hora_final','expositor','tema'];
 }

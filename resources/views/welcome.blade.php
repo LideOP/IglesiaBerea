@@ -9,8 +9,8 @@
 <div class="Img">
     <h1>IGLESIA BIBLICA BEREA</h1>
     <div class="image-row">
-        <img src="{{ asset('/logo/igle.jpg') }} " width="450" height="350">
-        <img src="{{ asset('/logo/jovenes.jpg') }} " width="450" height="350">
+        <img src="{{ asset('/logo/igle.webp') }} " width="450" height="350">
+        <img src="{{ asset('/logo/jovenes.webp') }} " width="450" height="350">
     </div>
 </div>
 @stop

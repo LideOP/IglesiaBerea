@@ -31,15 +31,16 @@ class ReunionesController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'dia'=> 'required',
-            'horaI'=> 'required',
-            'horaF'=> 'required',
-            'expositor'=> 'required',
-            'tema'=> 'required'
-        ]);
-        return $request->all();
-        // $reunion = reunions::create($request->all());
-        // return redirect()->route('admin.reuniones.edit', $reunion);
+             'dia'=> 'required',
+             'hora_inicio'=> 'required',
+             'hora_final'=> 'required',
+             'expositor'=> 'required',
+             'tema'=> 'required'
+
+         ]);
+        //  return $request->all();
+        $reunion = reunions::create($request->all());
+        return redirect()->route('admin.reuniones.index', $reunion)->with('info','Se creo una nueva reunion');
 
     }
 
@@ -64,7 +65,16 @@ class ReunionesController extends Controller
      */
     public function update(Request $request,reunions $reunione)
     {
-        
+        $request->validate([
+            'dia'=> 'required',
+            'hora_inicio'=> 'required',
+            'hora_final'=> 'required',
+            'expositor'=> 'required',
+            'tema'=> 'required'
+
+        ]);
+        $reunione->update($request->all());
+        return redirect()->route('admin.reuniones.edit', $reunione)->with('info','La reunion se actualizo correctamente');
     }
 
     /**
@@ -72,6 +82,7 @@ class ReunionesController extends Controller
      */
     public function destroy(reunions $reunione)
     {
-        //
+        $reunione->delete();
+        return redirect()->route('admin.reuniones.index')->with('info','Se elimino correctamente');
     }
 }
