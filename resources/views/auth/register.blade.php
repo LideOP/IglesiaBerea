@@ -9,14 +9,39 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-            <div>
-                <x-label for="name" value="{{ __('Name') }}" />
+            <div> 
+                <x-label for="name" value="{{ __('Nombre') }}" />
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
 
+            <div> 
+                <x-label for="name" value="{{ __('Apellido Paterno') }}" />
+                <x-input id="name" class="block mt-1 w-full" type="text" name="Apellido Paterno" :value="old('Apellido Paterno')" required autofocus autocomplete="Apellido Paterno" />
+            </div>
+
+            <div> 
+                <x-label for="name" value="{{ __('Apellido Materno') }}" />
+                <x-input id="name" class="block mt-1 w-full" type="text" name="Apellido Materno" :value="old('Apellido Materno')" required autofocus autocomplete="Apellido Materno" />
+            </div>
+
             <div class="mt-4">
-                <x-label for="email" value="{{ __('Email') }}" />
+                <x-label for="ci" value="{{ __('CI') }}" />
+                <x-input id="ci" class="block mt-1 w-full" type="text" name="ci" :value="old('ci')" required autocomplete="ci" />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="ciudad" value="{{ __('Ciudad') }}" />
+                <x-input id="ciudad" class="block mt-1 w-full" type="text" name="ciudad" :value="old('ciudad')" required autocomplete="ciudad" />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="email" value="{{ __('Correo') }}" />
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="ffnn" value="{{ __('Fecha Nacimiento') }}" />
+                <x-input id="ffnn" class="block mt-1 w-full" type="date" name="ffnn" :value="old('ffnn')" required autocomplete="ffnn" />
             </div>
 
             <div class="mt-4">

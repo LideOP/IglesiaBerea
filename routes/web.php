@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Usuarios\UsuarioController;
+use GuzzleHttp\Promise\Create;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,10 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+
+
+
+// Rutas para usuarios
+//Route::get('registro',[UsuarioController::class,'create'])->name('usuario.create');
