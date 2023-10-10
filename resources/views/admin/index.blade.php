@@ -1,11 +1,11 @@
 @extends('adminlte::page')
 
-@section('title', 'Iglesia Berea')
+@section('title', 'Iglesia Berea index')
 
 @section('Sweetalert2',true)
 
 @section('content_header')
-    <h1>Iglesia Biblica Berea</h1>
+    <h1>Iglesia Biblica Berea Index</h1>
 @stop
 
 @section('content')

@@ -74,7 +74,7 @@ class ReunionesController extends Controller
 
         ]);
         $reunione->update($request->all());
-        return redirect()->route('admin.reuniones.edit', $reunione)->with('info','La reunion se actualizo correctamente');
+        return redirect()->route('admin.reuniones.index', $reunione)->with('info','La reunion se actualizo correctamente');
     }
 
     /**

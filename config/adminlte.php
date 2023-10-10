@@ -64,11 +64,11 @@ return [
     */
 
     'logo' => '<b>Iglesia Biblica </b>BEREA',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo_img' => '/logo/ibb.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
-    'logo_img_alt' => 'Admin Logo',
+    'logo_img_alt' => 'IBB Logo',
 
     /*
     |--------------------------------------------------------------------------
@@ -309,13 +309,12 @@ return [
         ],
         [
             'text' => 'Sing me',
-            'url' => '#',
+            'route'  => 'register',
             'topnav_right' => true
         ],
         [
             'text' => 'Log in',
-            'route'  => 'admin.login',
-            'url' => '#',
+            'route'  => 'login',
             'topnav_right' => true
         ],
         [
