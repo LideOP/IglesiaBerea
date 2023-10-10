@@ -309,7 +309,7 @@ return [
         ],
         [
             'text' => 'Sing me',
-            'route' => 'register',
+            'url' => '#',
             'topnav_right' => true
         ],
         [
@@ -322,8 +322,14 @@ return [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
+
         // Sidebar items:
         
+        [
+            'text' => 'Miembros',
+            'route'  => 'usuario.create',
+            //'icon' => 'fa-solid fa-users',
+        ],
         [
             'text' => 'Reuniones',
             'route'  => 'admin.reuniones.index',

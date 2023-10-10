@@ -9,3 +9,5 @@ Route::get('',[HomeController::class,'index'])->name('admin.home');
 Route::get('login',[HomeController::class,'index']);
 Route::post('register',[HomeController::class,'register_login']);
 Route::resource('reuniones',ReunionesController::class)->names('admin.reuniones');
+
+//Route::resource('miembros',);
