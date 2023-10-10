@@ -12,4 +12,4 @@ use App\Http\Controllers\Usuarios\UsuarioController;
 
 //Route::resource('registro',UsuarioController::class)->names('usuario.crear');
 
-Route::get('registro',[UsuarioController::class,'create'])->name('usuario.create');
+// Route::get('registro',[UsuarioController::class,'create'])->name('usuario.create');

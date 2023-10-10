@@ -308,11 +308,6 @@ return [
             'topnav_right' => true
         ],
         [
-            'text' => 'Sing me',
-            'url' => '#',
-            'topnav_right' => true
-        ],
-        [
             'text' => 'Log in',
             'route'  => 'admin.login',
             'url' => '#',
@@ -327,7 +322,7 @@ return [
         
         [
             'text' => 'Miembros',
-            'route'  => 'usuario.create',
+            'url'  => '#',
             //'icon' => 'fa-solid fa-users',
         ],
         [
