@@ -15,10 +15,11 @@
 @endif
 
     <div class="card">
-        @role('admin')
+
+    
+        @role('Administrador')
             <div class="card-header">
-                <a class="btn btn-primary btn-lg  " href="{{route('admin.miembros.create')}}">Registrar</a>
-                <a class="btn btn-primary btn-lg" href="">crear usuario</a>
+                <a class="btn btn-info btn-lg float-right h-10 " href="{{route('admin.miembros.create')}}"><i class="fas fa-plus mb-1 mt-1 mr-2"></i>Registrar</a>
             </div>
         @endrole
 

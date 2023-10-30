@@ -70,6 +70,9 @@ class RolesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $rol = Role::find($id);
+        
+        $rol->delete();
+        return back()->with('message','ok');
     }
 }

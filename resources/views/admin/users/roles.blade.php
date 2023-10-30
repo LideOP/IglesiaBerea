@@ -7,8 +7,18 @@
 @stop
 
 @section('content')
-    <p>hola es...... la vista de roles</p>
-
+    <p></p>
+    <div class="card">
+        @php
+            if(session()){
+                if(session('message')=='ok'){
+                    echo'<x-adminlte-alert class="bg-teal text-uppercase" icon="fa fa-lg fa-thumbs-up" title="Done" dismissable>
+                            Rol eliminado con éxito..!
+                        </x-adminlte-alert>';   
+                }
+            }
+        @endphp
+    </div>
     <div class="card">
 
         <div class="card-header">
@@ -20,7 +30,7 @@
 
                 $btnEdit = '';
                 $btnDelete = '<button type ="submit" class="btn btn-xs btn-default text-danger mx-1 shadow" title="boton delete xd">
-                                <i class="fa fa-lg fa-fw fa-eye"></i>
+                                <i class="fa fa-lg fa-fw fa-trash-alt"></i>
                             </button>';
                 
                 $btnDetails = '<button type ="submit" class="btn btn-xs btn-default text-danger mx-1 shadow" title="boton detalle xd">
@@ -57,7 +67,7 @@
 
     </div>
 
-<x-adminlte-modal id="modalPurple" title="Nuevo Rol" theme="primary" icon="fas fa-bolt" size="lg" disable-animation>
+<x-adminlte-modal id="modalPurple" title="Nuevo Rol" theme="info" icon="fas fa-plus" size="lg" disable-animation>
 
     <form action="{{ route('admin.roles.store') }}" method="post">
         @csrf
@@ -65,7 +75,7 @@
         <div class="row">
             <x-adminlte-input name="nombre" label="Nombre" placeholder="aqui su rol" fgroup-class="col-md-6" disable-feedback/>
         </div>
-        <x-adminlte-button type="submmit" label="Guardar" theme="primary" icon="fas fa-key"/>
+        <x-adminlte-button type="submmit" label="Guardar" theme="info" icon="fas fa-key"/>
 
 
     </form>

@@ -30,7 +30,11 @@ class PermisoController extends Controller
      */
     public function store(Request $request)
     {
-        $permission = Permission::create(['name'=> $request->input('nombre')]);
+        $validacion = $request->validate([
+            'permiso' => 'required|string',
+        ]);
+
+        $permission = Permission::create(['name'=> $request->input('permiso')]);
         return back();
     }
 
@@ -47,7 +51,7 @@ class PermisoController extends Controller
      */
     public function edit(string $id)
     {
-        //
+       
     }
 
     /**
@@ -55,7 +59,14 @@ class PermisoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validacion = $request->validate([
+            'permiso' => 'required|string',
+        ]);
+        
+        // $permiso = Permission::find($id);
+        // $permiso->name = $validacion['permiso'];
+        // $permiso->save();
+        return response()->json($id);
     }
 
     /**
@@ -63,6 +74,9 @@ class PermisoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $permiso = Permission::find($id);
+        $permiso->delete();
+
+        return back()->with('message','ok');
     }
 }

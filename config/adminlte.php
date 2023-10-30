@@ -309,9 +309,9 @@ return [
         ],
         [
             'text' => 'Log in',
-            'route'  => 'admin.login',
-            'url' => '#',
-            'topnav_right' => true
+            'route'  => 'login',
+            'topnav_right' => true,
+            'can' => 'login'
         ],
         [
             'type'         => 'fullscreen-widget',
@@ -320,28 +320,34 @@ return [
 
         // Sidebar items:
         
-        ['header' => 'USUARIOS'],
+        ['header' => 'USUARIOS',
+            'can' => 'administrador usuario',
+        ],
+
         [
             'text' => 'Roles',
             'route' => 'admin.roles.index',
             'icon' => 'far fa-fw fa-file',
+            'can' => 'administrador usuario'
         ],
         [
             'text' => 'Permisos',
             'route' => 'admin.permisos.index',
             'icon' => 'far fa-fw fa-circle',
+            'can' => 'administrador usuario'
         ],
         [
             'text' => 'Usuarios',
             'route' => 'admin.asignar.index',
             'icon' => 'fa fa-user',
+            'can' => 'administrador usuario'
         ],
 
         ['header' => 'IGLESIA'],
 
         [
             'text' => 'Miembros',
-            'route'  => 'admin.miembros.create',
+            'route'  => 'admin.miembros.index',
             'icon' => 'fa-solid fa-users',
         ],
         [
@@ -356,7 +362,7 @@ return [
         ],
         [
             'text' => 'Actividades',
-            'url'  => 'actividades',
+            'route'  => 'admin.actividades.index',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
