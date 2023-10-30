@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('reunions', function (Blueprint $table) {
             $table->id();
-            $table->string('hora_inicio');
-            $table->string('hora_final');
-            $table->string('expositor');
+            $table->time('hora_inicio');
+            $table->time('hora_final');
+            $table->foreignId('expositor_id')->constrained('expositor');
             $table->string('tema');
             $table->string('dia');
             $table->timestamps();

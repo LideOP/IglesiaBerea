@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Usuarios\UsuarioController;
 use GuzzleHttp\Promise\Create;
-
+use App\Http\Controllers\ProfileController;
+use App\Livewire\ExpositorAutocomplete;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,17 +17,20 @@ use GuzzleHttp\Promise\Create;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+     return view('public');
 });
+// Route::get('/expositor-autocomplete', ExpositorAutocomplete::class)->name('livewire');
+
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/pro', function () {
+        return view('welcome');
+    })->name('welcome');
+    //xd
 });
 
 

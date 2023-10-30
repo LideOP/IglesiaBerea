@@ -5,12 +5,11 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\reunions;
+use App\Models\expositor;
+
 
 class ReunionesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $reuniones = reunions::all();
@@ -22,7 +21,12 @@ class ReunionesController extends Controller
      */
     public function create()
     {
-        return view('admin.reuniones.create');
+        $expo = expositor::pluck('nombre','id');
+        $opciones = ['Lunes' => 'Lunes', 'Martes' => 'Martes', 'Miercoles' => 'Miercoles', 'Jueves' => 'Jueves', 'Viernes' => 'Viernes','Sabado' => 'Sabado', 'Domingo' => 'Domingo'];
+        return view('admin.reuniones.create')
+        ->with('opciones',$opciones)
+        ->with('expo',$expo);
+        // return view('admin.reuniones.create');
     }
 
     /**
@@ -30,34 +34,31 @@ class ReunionesController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-             'dia'=> 'required',
-             'hora_inicio'=> 'required',
-             'hora_final'=> 'required',
-             'expositor'=> 'required',
-             'tema'=> 'required'
 
-         ]);
-        //  return $request->all();
-        $reunion = reunions::create($request->all());
-        return redirect()->route('admin.reuniones.index', $reunion)->with('info','Se creo una nueva reunion');
+            $request->validate([
+                'dia'=> 'required',
+                'hora_inicio'=> 'required|date_format:H:i',
+                'hora_final'=> 'required|date_format:H:i',
+                'expositor_id'=> 'required',
+                'tema'=> 'required'
 
+                ]);
+                    
+ 
+                $reunion = reunions::create($request->all());
+                return redirect()->route('admin.reuniones.index', $reunion)->with('info','Se creo una nueva reunion');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(reunions $reunione)
     {
         return view('admin.reuniones.show', compact('reunione'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(reunions $reunione)
     {
-        return view('admin.reuniones.edit', compact('reunione'));
+        $expo = expositor::pluck('nombre','id');
+        $op = ['Lunes' => 'Lunes', 'Martes' => 'Martes', 'Miercoles' => 'Miercoles', 'Jueves' => 'Jueves', 'Viernes' => 'Viernes','Sabado' => 'Sabado', 'Domingo' => 'Domingo'];
+        return view('admin.reuniones.edit', compact('reunione','op','expo'));
     }
 
     /**
@@ -66,23 +67,21 @@ class ReunionesController extends Controller
     public function update(Request $request,reunions $reunione)
     {
         $request->validate([
-            'dia'=> 'required',
+            'dia'=> 'nullable',
             'hora_inicio'=> 'required',
             'hora_final'=> 'required',
-            'expositor'=> 'required',
+            'expositor_id'=> 'required',
             'tema'=> 'required'
 
         ]);
         $reunione->update($request->all());
-        return redirect()->route('admin.reuniones.edit', $reunione)->with('info','La reunion se actualizo correctamente');
+        return redirect()->route('admin.reuniones.index', $reunione)->with('info','La reunion se actualizo correctamente');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(reunions $reunione)
     {
         $reunione->delete();
         return redirect()->route('admin.reuniones.index')->with('info','Se elimino correctamente');
     }
+
 }
