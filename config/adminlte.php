@@ -309,8 +309,7 @@ return [
         ],
         [
             'text' => 'Log in',
-            'route'  => 'admin.login',
-            'url' => '#',
+            'route'  => 'login',
             'topnav_right' => true
         ],
         [
@@ -320,15 +319,34 @@ return [
 
         // Sidebar items:
         
+        ['header' => 'USUARIOS'],
+        [
+            'text' => 'Roles',
+            'route' => 'admin.roles.index',
+            'icon' => 'far fa-fw fa-file',
+        ],
+        [
+            'text' => 'Permisos',
+            'route' => 'admin.permisos.index',
+            'icon' => 'far fa-fw fa-circle',
+        ],
+        [
+            'text' => 'Usuarios',
+            'route' => 'admin.asignar.index',
+            'icon' => 'fa fa-user',
+        ],
+
+        ['header' => 'IGLESIA'],
+
         [
             'text' => 'Miembros',
-            'route'  => 'usuario.create',
-            //'icon' => 'fa-solid fa-users',
+            'route'  => 'admin.miembros.index',
+            'icon' => 'fa fa-user-friends',
         ],
         [
             'text' => 'Reuniones',
             'route'  => 'admin.reuniones.index',
-            'icon' => 'fas fa-fw fa-user-group',
+            'icon' => 'fa fa-users',
         ],
         [
             'text' => 'Talleres y conferencias',
@@ -338,13 +356,13 @@ return [
         [
             'text' => 'Actividades',
             'url'  => 'actividades',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-tasks',
         ],
        
         ['header' => 'Contactanos'],
         [
             'text'       => 'Facebook',
-            'icon' => 'fa-brands fa-facebook-f',
+            'icon'       => 'fab fa-facebook',
             'icon_color' => 'blue',
             'url'        => '#',
         ],
@@ -352,19 +370,19 @@ return [
             'text'       => 'Youtube',
             'icon_color' => 'red',
             'url'        => '#',
-            'icon' => 'fa-brands fa-youtube',
+            'icon'       => 'fa-brands fa-youtube',
         ],
         [
             'text'       => 'Whatsapp',
             'icon_color' => 'green',
             'url'        => '#',
-            'icon' => 'fa-brands fa-whatsapp',
+            'icon'       => 'fa-brands fa-whatsapp',
         ],
         [
             'text'       => 'Telefono',
             'icon_color' => 'black',
             'url'        => '#',
-            'icon' => 'fa-solid fa-phone',
+            'icon'       => 'fa-solid fa-phone',
         ],
     ],
 

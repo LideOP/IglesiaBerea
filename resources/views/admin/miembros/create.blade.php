@@ -1,3 +1,4 @@
+ 
 <x-guest-layout>
     <x-authentication-card>
         <x-slot name="logo">
@@ -6,27 +7,38 @@
 
         <x-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('admin.registrar') }}">
             @csrf
 
-            <div>
-                <x-label for="name" value="{{ __('Name') }}" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+  
+            <div> 
+                <x-label for="name" value="{{ __('nombre') }}" />
+                <x-input id="nombre" class="block mt-1 w-full" type="text" name="nombre" :value="old('name')" required autofocus autocomplete="name" />
+            </div>
+
+            <div> 
+                <x-label for="apellido" value="{{ __('apellidos') }}" />
+                <x-input id="apellidos" class="block mt-1 w-full" type="text" name="apellidos" :value="old('apellidos')" required autofocus autocomplete="apellidos" />
             </div>
 
             <div class="mt-4">
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+                <x-label for="ci" value="{{ __('ci') }}" />
+                <x-input id="ci" class="block mt-1 w-full" type="number" name="ci" :value="old('ci')" required autocomplete="ci" />
             </div>
 
             <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+                <x-label for="telefono" value="{{ __('telefono') }}" />
+                <x-input id="telefono" class="block mt-1 w-full" type="number" name="telefono" :value="old('telefono')" required autocomplete="telefono" />
             </div>
 
             <div class="mt-4">
-                <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+                <x-label for="ffnn" value="{{ __('Fecha Nacimiento') }}" />
+                <x-input id="fecha_nac" class="block mt-1 w-full" type="date" name="fecha_nac" :value="old('ffnn')" required autocomplete="ffnn" />
+            </div>
+
+            <div class="mt-4">
+                <x-label for="direccion" value="{{ __('direccion') }}" />
+                <x-input id="direccion" class="block mt-1 w-full" type="text" name="direccion" required autocomplete="direccion" />
             </div>
 
 
@@ -53,7 +65,7 @@
                 </a>
 
                 <x-button class="ml-4">
-                    {{ __('Register') }}
+                    {{ __('Registrar') }}
                 </x-button>
             </div>
         </form>

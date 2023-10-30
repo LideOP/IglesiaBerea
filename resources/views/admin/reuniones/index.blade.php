@@ -14,7 +14,7 @@
     @endif
     <div class="card">
         <div class="card-header">
-            <a class="btn btn-primary btn-sn" href="{{route('admin.reuniones.create')}}">Agregar una nueva reunion</a>
+            <a class="btn btn-info btn-sn" href="{{route('admin.reuniones.create')}}">Agregar una nueva reunion</a>
         </div>
         <div class="card-body">
             <table class="table table-striped">
