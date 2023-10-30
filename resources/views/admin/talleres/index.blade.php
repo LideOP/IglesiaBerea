@@ -20,7 +20,6 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>#</th>
                         <th>Talleres</th>
                         <th>Conferencias</th>
                         <th>Fecha</th>
@@ -33,7 +32,6 @@
                 <tbody>
                     @foreach ($talleres as $taller)
                     <tr>
-                        <td>{{$taller->id}}</td>
                         <td>{{$taller->titulo_taller}}</td>
                         <td>{{$taller->titulo_conferencia}}</td>
                         <td>{{$taller->fecha}}</td>

@@ -16,7 +16,7 @@ use App\Livewire\ExpositorAutocomplete;
 Route::get('',[HomeController::class,'index'])->name('admin.login');
 Route::get('login',[HomeController::class,'index']);
 Route::get('profile',[HomeController::class,'profile']);
-
+Route::get('vision', [HomeController::class,'vista'])->name('vision');
 // Route::post('register',[HomeController::class,'register_login']);
 Route::resource('reuniones',ReunionesController::class)->names('admin.reuniones');
 // rutas para talleres y conferencias

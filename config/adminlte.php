@@ -298,13 +298,13 @@ return [
             'topnav' => true
         ],
         [
-            'text' => 'Vision/Mision',
-            'url' => '#',
+            'text' => 'Quienes somos',
+            'url'  => '#',
             'topnav_right' => true
         ],
         [
-            'text' => 'Quienes somos',
-            'url' => '#',
+            'text' => 'Vision/Mision',
+            'route'  => 'vision',
             'topnav_right' => true
         ],
         [

@@ -14,4 +14,8 @@ class HomeController extends Controller
     public function profile(){
         return view('profile.update-profile-information-form');
     }
+    public function vista(){
+        return view('vision');
+    }
+
 }

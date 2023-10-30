@@ -20,7 +20,6 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
-                        <th>#</th>
                         <th>Actividades</th>
                         <th>Lugar</th>
                         <th>Fecha</th>
@@ -32,7 +31,6 @@
                 <tbody>
                     @foreach ($actividad as $actividade)
                     <tr>
-                        <td>{{$actividade->id}}</td>
                         <td>{{$actividade->nombre}}</td>
                         <td>{{$actividade->lugar}}</td>
                         <td>{{$actividade->fecha}}</td>

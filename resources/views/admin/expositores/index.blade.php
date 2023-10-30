@@ -20,7 +20,6 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>#</th>
                         <th>Nombre</th>
                         <th>Cargo</th>
                         <th>Telefono</th>
@@ -31,7 +30,6 @@
                 <tbody>
                     @foreach ($expositor as $expo)
                     <tr>
-                        <td>{{$expo->id}}</td>
                         <td>{{$expo->nombre}}</td>
                         <td>{{$expo->cargo}}</td>
                         <td>{{$expo->telefono}}</td>
