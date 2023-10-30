@@ -3,7 +3,7 @@
 @section('title', 'Iglesia Berea')
 
 @section('content_header')
-    <h1>Lista de Expositores</h1>
+    <h1>Lista de Expositores Actualizado</h1>
 @stop
 
 @section('content')
