@@ -46,7 +46,7 @@
 
                 <div class="form-group">
                     {!! Form::label('documento','Documento')!!}
-                    {!! Form::file('documento',null,['class'=>'form-control'])!!}
+                    {!! Form::file('documento',null,['class'=>'form-control', 'accept' => 'image/*'])!!}
                     @error('tema')
                         <span class="text-danger">{{$message}}</span>
                     @enderror

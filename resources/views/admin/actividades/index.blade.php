@@ -36,7 +36,14 @@
                         <td>{{$actividade->nombre}}</td>
                         <td>{{$actividade->lugar}}</td>
                         <td>{{$actividade->fecha}}</td>
-                        <td>{{$actividade->documento}}</td>
+                        <td>
+                            <img src="{{asset($actividade->documento)}}" alt="" class="img-fluid" width="80px">
+                        </td>
+
+                        <td width="10px">
+                            <button class="btn btn-info open-image" onclick="abrirVentana('{{ asset($actividade->documento) }}')">Imagen</button>
+                        </td>
+
                         <td width="10px">
                             <a class="btn btn-primary btn-sm" href="{{route('admin.actividades.edit', $actividade)}}">Editar</a>
                         </td>
@@ -55,4 +62,15 @@
 
         </div>
     </div>
+@stop
+@section('js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+<script>
+    function abrirVentana(url) {
+        window.open(url, '_blank', 'width=1000,height=800');
+    }
+</script>
+
 @stop

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('lugar')->nullable();
             $table->date('fecha')->nullable();
-            $table->binary('documento')->nullable();
+            $table->string('documento')->nullable();
             $table->timestamps();
         });
     }
