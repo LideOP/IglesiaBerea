@@ -13,7 +13,8 @@
             {!! Form::open(['route' => 'admin.reuniones.store'])!!}
                 <div class="form-group">
                     {!! Form::label('dia','Dia')!!}
-                    {!! Form::text('dia',null,['class'=>'form-control', 'placeholder' => 'Ingrese el dia'])!!}
+                    {!! Form::select('dia', $opciones, null, ['class' => 'form-control', 'placeholder' => 'Selecciona un dia']) !!}                    
+                    
                     @error('dia')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
@@ -36,12 +37,23 @@
                     @enderror
                 </div>
 
+
                 <div class="form-group">
-                    {!! Form::label('expositor','Expositor')!!}
-                    {!! Form::text('expositor',null,['class'=>'form-control', 'placeholder' => 'Ingrese el expositor'])!!}
-                    @error('expositor')
-                        <span class="text-danger">{{$message}}</span>
-                    @enderror
+                    {!! Form::label('expositor_id','Expositor')!!}
+                    <div class="row">
+                        <div class="col-md-8 col-lg-8">
+                            {!! Form::select('expositor_id', $expo, null, ['class' => 'form-control', 'placeholder' => 'Seleccione un expositor']) !!}
+                        </div>
+                        <div class="col-md-8 col-lg-4">
+                            <a class="btn btn-info btn-sm w-100" href="{{ route('admin.expositores.create') }}"style="height: 38px;">Agregar nuevo Expositor</a>
+                        </div>
+                        @error('expositor_id')
+                    <span class="text-danger">{{$message}}</span>
+                @enderror
+                    </div>
+
+                   
+                    
                 </div>
 
                 <div class="form-group">
@@ -52,7 +64,15 @@
                     @enderror
                 </div>
                 {!!Form::submit('Crear Reunion',['class' => 'btn btn-info'])!!}
-            {!! Form::close() !!}
+            <!-- @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif -->
 
         </div>
     </div>

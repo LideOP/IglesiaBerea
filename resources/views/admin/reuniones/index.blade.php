@@ -6,6 +6,7 @@
     <h1>Lista de reuniones</h1>
 @stop
 
+
 @section('content')
     @if(session('info'))
         <div class="alert alert-success">
@@ -20,7 +21,6 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>#</th>
                         <th>Dia</th>
                         <th>Hora Inicio</th>
                         <th>Hora Final</th>
@@ -33,11 +33,10 @@
                 <tbody>
                     @foreach ($reuniones as $reunion)
                     <tr>
-                        <td>{{$reunion->id}}</td>
                         <td>{{$reunion->dia}}</td>
-                        <td>{{$reunion->hora_inicio}}</td>
-                        <td>{{$reunion->hora_final}}</td>
-                        <td>{{$reunion->expositor}}</td>
+                        <td>{{substr($reunion->hora_inicio,0,5)}}</td>
+                        <td>{{substr($reunion->hora_final,0,5)}}</td>
+                        <td>{{$reunion->expositores->nombre}}</td>
                         <td>{{$reunion->tema}}</td>
                     
                         <td width="10px">
@@ -58,4 +57,28 @@
 
         </div>
     </div>
+
+
+    <!-- <div>
+    <input type="text" wire:model="query" wire:keydown.escape="resetQuery" wire:keydown.tab="resetQuery">
+    <ul>
+        @foreach ($reuniones as $reunion)
+            <td>{{$reunion->expositores->nombre}}</td>
+        @endforeach
+    </ul>
+    </div> -->
+
+
+
+<!-- <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div> -->
+
 @stop

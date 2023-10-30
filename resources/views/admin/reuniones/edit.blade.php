@@ -19,7 +19,7 @@
             {!! Form::model($reunione, ['route' => ['admin.reuniones.update',$reunione],'method'=>'put'])!!}
                 <div class="form-group">
                     {!! Form::label('dia','Dia')!!}
-                    {!! Form::text('dia',null,['class'=>'form-control', 'placeholder' => 'Ingrese el dia'])!!}
+                    {!! Form::select('dia', $op, $reunione->dia, ['class' => 'form-control', 'placeholder' => 'Selecciona un dia']) !!}                    
                     @error('dia')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
@@ -29,7 +29,7 @@
                 <div class="form-group">
                     {!! Form::label('hora_inicio','Hora de Inicio')!!}
                     {!! Form::text('hora_inicio',null,['class'=>'form-control', 'placeholder' => 'Ingrese la hora de inicio'])!!}
-                    @error('horaI')
+                    @error('hora_inicio')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
@@ -37,15 +37,16 @@
                 <div class="form-group">
                     {!! Form::label('hora_final','Hora de culminacion')!!}
                     {!! Form::text('hora_final',null,['class'=>'form-control', 'placeholder' => 'Ingrese la hora que finalizara'])!!}
-                    @error('horaF')
+                    @error('hora_final')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
+               
 
                 <div class="form-group">
-                    {!! Form::label('expositor','Expositor')!!}
-                    {!! Form::text('expositor',null,['class'=>'form-control', 'placeholder' => 'Ingrese el expositor'])!!}
-                    @error('expositor')
+                    {!! Form::label('expositor_id','Expositor')!!}
+                    {!! Form::select('expositor_id',$expo,null, ['class'=>'form-control', 'placeholder' => 'Ingrese el expositor'])!!}
+                    @error('expositor_id')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
@@ -59,7 +60,7 @@
                 </div>
                 {!!Form::submit('Actualizar Reunion',['class' => 'btn btn-info'])!!}
             {!! Form::close() !!}
-
+            
         </div>
     </div>
 @stop

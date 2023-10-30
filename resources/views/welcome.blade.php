@@ -6,12 +6,16 @@
 @stop
 
 @section('content')
-<!-- @vite(['resources/css/galeria.css']) -->
+<link rel="stylesheet" type="text/css" href="{{ asset('/css/galeria.css') }}">
+
 <div class="Img">
     <h1>IGLESIA BIBLICA BEREA</h1>
-    <div class="image-row">
-        <img src="{{ asset('/logo/igle.webp') }} " width="450" height="350">
-        <img src="{{ asset('/logo/jovenes.webp') }} " width="450" height="350">
+    <div class="galeria">
+        <img src="{{ asset('/img/igle.webp') }} "alt="">
+        <img src="{{ asset('/img/jovenes.webp') }} " alt="">
+        <img src="{{ asset('/img/1.webp') }} " alt="">
+        <img src="{{ asset('/img/2.webp') }} " alt="">
+        <img src="{{ asset('/img/3.webp') }} " alt="">
     </div>
 </div>
 @stop

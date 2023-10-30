@@ -64,7 +64,7 @@ return [
     */
 
     'logo' => '<b>Iglesia Biblica </b>BEREA',
-    'logo_img' => '/logo/ibb.png',
+    'logo_img' => '/img/ibb.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -110,7 +110,7 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => '/img/ibb.png',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
@@ -135,7 +135,7 @@ return [
     'usermenu_header_class' => 'bg-info',
     'usermenu_image' => true,
     'usermenu_desc' => true,
-    'usermenu_profile_url' => true,
+    'usermenu_profile_url' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -310,7 +310,6 @@ return [
         [
             'text' => 'Log in',
             'route'  => 'admin.login',
-            'url' => '#',
             'topnav_right' => true
         ],
         [
@@ -332,40 +331,50 @@ return [
         ],
         [
             'text' => 'Talleres y conferencias',
-            'url'  => 'talleres',
+            'route'  => 'admin.talleres.index',
             'icon' => 'fab fa-fw fa-buffer',
         ],
         [
             'text' => 'Actividades',
-            'url'  => 'actividades',
+            'route'  => 'admin.actividades.index',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Expositores',
+            'route'  => 'admin.expositores.index',
             'icon' => 'fas fa-fw fa-user',
         ],
        
-        ['header' => 'Contactanos'],
-        [
-            'text'       => 'Facebook',
-            'icon' => 'fa-brands fa-facebook-f',
-            'icon_color' => 'blue',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'Youtube',
-            'icon_color' => 'red',
-            'url'        => '#',
-            'icon' => 'fa-brands fa-youtube',
-        ],
-        [
-            'text'       => 'Whatsapp',
-            'icon_color' => 'green',
-            'url'        => '#',
-            'icon' => 'fa-brands fa-whatsapp',
-        ],
-        [
-            'text'       => 'Telefono',
-            'icon_color' => 'black',
-            'url'        => '#',
-            'icon' => 'fa-solid fa-phone',
-        ],
+
+        ['text' => 'Redes Sociales',
+        'submenu' => [
+            [
+                'text'       => 'Facebook',
+                'icon' => 'fa-brands fa-facebook-f',
+                'icon_color' => 'blue',
+                'url'        => '#',
+            ],
+            [
+                'text'       => 'Youtube',
+                'icon_color' => 'red',
+                'url'        => '#',
+                'icon' => 'fa-brands fa-youtube',
+            ],
+            [
+                'text'       => 'Whatsapp',
+                'icon_color' => 'green',
+                'url'        => '#',
+                'icon' => 'fa-brands fa-whatsapp',
+            ],
+            [
+                'text'       => 'Telefono',
+                'icon_color' => 'black',
+                'url'        => '#',
+                'icon' => 'fa-solid fa-phone',
+            ],
+        ]
+        ]
+        
     ],
 
     /*
