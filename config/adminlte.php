@@ -309,8 +309,9 @@ return [
         ],
         [
             'text' => 'Log in',
-            'route'  => 'admin.login',
-            'topnav_right' => true
+            'route'  => 'login',
+            'topnav_right' => true,
+            'can' => 'login'
         ],
         [
             'type'         => 'fullscreen-widget',
@@ -319,15 +320,40 @@ return [
 
         // Sidebar items:
         
+        ['header' => 'USUARIOS',
+            'can' => 'administrador usuario',
+        ],
+
+        [
+            'text' => 'Roles',
+            'route' => 'admin.roles.index',
+            'icon' => 'far fa-fw fa-file',
+            'can' => 'administrador usuario'
+        ],
+        [
+            'text' => 'Permisos',
+            'route' => 'admin.permisos.index',
+            'icon' => 'far fa-fw fa-circle',
+            'can' => 'administrador usuario'
+        ],
+        [
+            'text' => 'Usuarios',
+            'route' => 'admin.asignar.index',
+            'icon' => 'fa fa-user',
+            'can' => 'administrador usuario'
+        ],
+
+        ['header' => 'IGLESIA'],
+
         [
             'text' => 'Miembros',
-            'url'  => '#',
-            //'icon' => 'fa-solid fa-users',
+            'route'  => 'admin.miembros.index',
+            'icon' => 'fa-solid fa-users',
         ],
         [
             'text' => 'Reuniones',
             'route'  => 'admin.reuniones.index',
-            'icon' => 'fas fa-fw fa-user-group',
+            'icon' => 'fa fa-users',
         ],
         [
             'text' => 'Talleres y conferencias',
@@ -345,36 +371,31 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
        
-
-        ['text' => 'Redes Sociales',
-        'submenu' => [
-            [
-                'text'       => 'Facebook',
-                'icon' => 'fa-brands fa-facebook-f',
-                'icon_color' => 'blue',
-                'url'        => '#',
-            ],
-            [
-                'text'       => 'Youtube',
-                'icon_color' => 'red',
-                'url'        => '#',
-                'icon' => 'fa-brands fa-youtube',
-            ],
-            [
-                'text'       => 'Whatsapp',
-                'icon_color' => 'green',
-                'url'        => '#',
-                'icon' => 'fa-brands fa-whatsapp',
-            ],
-            [
-                'text'       => 'Telefono',
-                'icon_color' => 'black',
-                'url'        => '#',
-                'icon' => 'fa-solid fa-phone',
-            ],
-        ]
-        ]
-        
+        ['header' => 'Contactanos'],
+        [
+            'text'       => 'Facebook',
+            'icon' => 'fa-brands fa-facebook-f',
+            'icon_color' => 'blue',
+            'url'        => '#',
+        ],
+        [
+            'text'       => 'Youtube',
+            'icon_color' => 'red',
+            'url'        => '#',
+            'icon' => 'fa-brands fa-youtube',
+        ],
+        [
+            'text'       => 'Whatsapp',
+            'icon_color' => 'green',
+            'url'        => '#',
+            'icon' => 'fa-brands fa-whatsapp',
+        ],
+        [
+            'text'       => 'Telefono',
+            'icon_color' => 'black',
+            'url'        => '#',
+            'icon' => 'fa-solid fa-phone',
+        ],
     ],
 
     /*
