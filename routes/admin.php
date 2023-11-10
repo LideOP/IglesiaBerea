@@ -28,6 +28,14 @@ Route::get('vision', [HomeController::class,'vista'])->name('vision');
 Route::resource('reuniones',ReunionesController::class)->names('admin.reuniones');
 // rutas para talleres y conferencias
 Route::resource('talleres',TalleresConferenciasController::class)->names('admin.talleres');
+// Route::get('talleres',TalleresConferenciasController::class,'FiltrarPorTipoEvento');
+
+//Filtros de eventos por actividad, conferencia y talleres
+Route::get('filtroActividades', [TalleresConferenciasController::class, 'filtrarActividades'])->name('admin.filtroActividades');
+Route::get('filtroConferencias', [TalleresConferenciasController::class, 'filtrarConferencias'])->name('admin.filtroConferencias');
+Route::get('filtrarTalleres', [TalleresConferenciasController::class, 'filtroTalleres'])->name('admin.filtrarTalleres');
+
+
 Route::resource('expositores',ExpositoresController::class)->names('admin.expositores');
 Route::resource('actividades',ActividadesController::class)->names('admin.actividades');
 

@@ -3,8 +3,8 @@
 @section('title', 'Iglesia Berea')
 
 @section('content_header')
-<h1 style="text-align: center;">TODOS LOS EVENTOS</h1>
-@stop
+    <h1 style="text-align: center;">ACTIVIDADES</h1>
+@endsection
 
 @section('content')
     @if(session('info'))
@@ -14,12 +14,10 @@
     @endif
     <div class="card">
         <div class="card-header">
-            <a class="btn btn-primary btn-lg mr-2" href="{{ route('admin.talleres.create') }}">Agregar un nuevo evento</a>
-            <a class="btn btn-info btn-lg mr-2" href="{{route('admin.filtroActividades')}}">Actividades</a>
-            <a class="btn btn-info btn-lg mr-2" href="{{route('admin.filtroConferencias')}}">Conferencias</a>
+            <a class="btn btn-primary btn-lg mr-2" href="{{route('admin.talleres.create')}}">Agregar un nuevo evento</a>
             <a class="btn btn-info btn-lg mr-2" href="{{route('admin.filtrarTalleres')}}">Talleres</a>
+            <a class="btn btn-info btn-lg mr-2" href="{{route('admin.filtroConferencias')}}">Conferencias</a>
         </div>
-        
         <div class="card-body">
             <table class="table table-striped">
                 <thead>
@@ -44,6 +42,8 @@
 
                             <img src="{{asset($taller->documento)}}" alt="" class="img-fluid" width="80px">
                         </td>
+                        <td width="10px">
+                        
                         <td width="10px">
                         <button class="btn btn-info open-image" onclick="abrirVentana('{{ asset($taller->documento) }}')">Imagen</button>
 

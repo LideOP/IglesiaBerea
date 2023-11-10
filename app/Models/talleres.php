@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class talleres extends Model
 {
     use HasFactory;
-    protected $fillable=['titulo_taller','titulo_conferencia','fecha','lugar','documento'];
+    protected $fillable=['nombre','tipo_evento','fecha','lugar','documento'];
     
 }

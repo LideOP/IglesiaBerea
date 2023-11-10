@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('talleres', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo_taller')->nullable();
-            $table->string('titulo_conferencia')->nullable();
+            $table->string('nombre')->nullable();
+            $table->string('tipo_evento')->nullable();
             $table->date('fecha')->nullable();
             $table->string('lugar')->nullable();
             $table->string('documento')->nullable();

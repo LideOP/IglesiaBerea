@@ -350,52 +350,50 @@ return [
             'route'  => 'admin.miembros.index',
             'icon' => 'fa-solid fa-users',
         ],
+        
+        [
+            'text' => 'Expositores',
+            'route'  => 'admin.expositores.index',
+            'icon' => 'fas fa-fw fa-user',
+        ], 
         [
             'text' => 'Reuniones',
             'route'  => 'admin.reuniones.index',
             'icon' => 'fa fa-users',
         ],
+        
         [
-            'text' => 'Talleres y conferencias',
+            'text' => 'Eventos',
             'route'  => 'admin.talleres.index',
             'icon' => 'fab fa-fw fa-buffer',
         ],
+
         [
-            'text' => 'Actividades',
-            'route'  => 'admin.actividades.index',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'Expositores',
-            'route'  => 'admin.expositores.index',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-       
-        ['header' => 'Contactanos'],
-        [
-            'text'       => 'Facebook',
-            'icon' => 'fa-brands fa-facebook-f',
-            'icon_color' => 'blue',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'Youtube',
-            'icon_color' => 'red',
-            'url'        => '#',
-            'icon' => 'fa-brands fa-youtube',
-        ],
-        [
-            'text'       => 'Whatsapp',
-            'icon_color' => 'green',
-            'url'        => '#',
-            'icon' => 'fa-brands fa-whatsapp',
-        ],
-        [
-            'text'       => 'Telefono',
-            'icon_color' => 'black',
-            'url'        => '#',
-            'icon' => 'fa-solid fa-phone',
-        ],
+            'text' => 'Redes Sociales',
+            'submenu' => [
+                [
+                    'text' => 'Facebook',
+                    'url'  => '#',
+                    'icon' => 'fa-brands fa-facebook-f',
+                ],
+                [
+                    'text' => 'Youtube',
+                    'url'  => '#',
+                    'icon' => 'fa-brands fa-youtube',
+                ],
+                [
+                    'text' => 'Whatsapp',
+                    'url'  => '#',
+                    'icon' => 'fa-brands fa-whatsapp',
+                ],
+                [
+                    'text' => 'Telefono',
+                    'url'  => '#',
+                    'icon' => 'fa-solid fa-phone',
+                ],
+            ],
+    
+        ],  
     ],
 
     /*

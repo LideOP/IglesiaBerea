@@ -19,18 +19,18 @@
 
         {!! Form::model($tallere,['route' => ['admin.talleres.update',$tallere],'method' => 'put', 'enctype' => 'multipart/form-data'])!!}
                 <div class="form-group">
-                    {!! Form::label('titulo_taller','Taller')!!}
-                    {!! Form::text('titulo_taller',null,['class'=>'form-control', 'placeholder' => 'Ingrese el titulo del taller'])!!}
-                    @error('titulo_taller')
+                    {!! Form::label('nombre','Nombre')!!}
+                    {!! Form::text('nombre',null,['class'=>'form-control', 'placeholder' => 'Ingrese el titulo del taller'])!!}
+                    @error('nombre')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                     
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('titulo_conferencia','Conferencia')!!}
-                    {!! Form::text('titulo_conferencia',null,['class'=>'form-control', 'placeholder' => 'Ingrese el titulo de la conferencia'])!!}
-                    @error('titulo_conferencia ')
+                    {!! Form::label('tipo_evento','Evento')!!}
+                    {!! Form::select('tipo_evento', $op, null, ['class' => 'form-control', 'placeholder' => 'Seleccione un evento']) !!}                    
+                    @error('tipo_evento ')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
