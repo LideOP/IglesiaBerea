@@ -3,8 +3,8 @@
 @section('title', 'Iglesia Berea')
 
 @section('content_header')
-<h1 style="text-align: center;">TODOS LOS EVENTOS</h1>
-@stop
+    <h1 style="text-align: center;">CONFERENCIA</h1>
+@endsection
 
 @section('content')
     @if(session('info'))
@@ -13,12 +13,10 @@
         </div>
     @endif
     <div class="card">
-        @role('Administrador')
         <div class="card-header">
-            <a class="btn btn-primary btn-lg mr-2" href="{{ route('admin.talleres.create') }}">Agregar un nuevo evento</a>
-            <a class="btn btn-info btn-lg mr-2" href="{{route('admin.filtroActividades')}}">Actividades</a>
-            <a class="btn btn-info btn-lg mr-2" href="{{route('admin.filtroConferencias')}}">Conferencias</a>
+            <a class="btn btn-primary btn-lg mr-2" href="{{route('admin.talleres.create')}}">Agregar un nuevo evento</a>
             <a class="btn btn-info btn-lg mr-2" href="{{route('admin.filtrarTalleres')}}">Talleres</a>
+            <a class="btn btn-info btn-lg mr-2" href="{{route('admin.filtroActividades')}}">Actividades</a>
         </div>
         <div class="card-body">
             <table class="table table-striped">
@@ -45,16 +43,15 @@
                             <img src="{{asset($taller->documento)}}" alt="" class="img-fluid" width="80px">
                         </td>
                         <td width="10px">
+                        
+                        <td width="10px">
                         <button class="btn btn-info open-image" onclick="abrirVentana('{{ asset($taller->documento) }}')">Imagen</button>
 
                         </td>
-                        @role(['Administrador','Secretario'])
                         <td width="10px">
                             <a class="btn btn-primary btn-sm" href="{{route('admin.talleres.edit', $taller)}}">Editar</a>
                         </td>
-                        @endrole
-
-                        @role('Administrador')
+                        
                         <td width="10px">
                             <form action="{{route('admin.talleres.destroy', $taller)}}" method= "POST">
                                 @csrf
@@ -62,7 +59,6 @@
                                 <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                             </form>
                         </td>
-                        @endrole
                     </tr>
                     @endforeach
                 </tbody>

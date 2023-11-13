@@ -351,18 +351,26 @@ return [
         [
             'text' => 'Miembros',
             'route'  => 'admin.miembros.index',
-            'icon' => 'fas fa-user-friends',
+            'icon' => 'fa-solid fa-users',
         ],
+        
+        [
+            'text' => 'Expositores',
+            'route'  => 'admin.expositores.index',
+            'icon' => 'fas fa-fw fa-user',
+        ], 
         [
             'text' => 'Reuniones',
             'route'  => 'admin.reuniones.index',
             'icon' => 'fas fa-users',
         ],
+        
         [
-            'text' => 'Talleres y conferencias',
+            'text' => 'Eventos',
             'route'  => 'admin.talleres.index',
             'icon' => 'fab fa-fw fa-buffer',
         ],
+
         [
             'text'   => 'Actividades',
             'route'  => 'admin.actividades.index',

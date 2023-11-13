@@ -16,6 +16,7 @@
         <img src="{{ asset('/img/1.webp') }} " alt="">
         <img src="{{ asset('/img/2.webp') }} " alt="">
         <img src="{{ asset('/img/3.webp') }} " alt="">
+        
     </div>
 </div>
 @stop
