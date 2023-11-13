@@ -10,6 +10,12 @@ use Spatie\Permission\Models\Role;
 
 class AsignarController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('can:administrador usuario');
+    }
+
     /**
      * Display a listing of the resource.
      */

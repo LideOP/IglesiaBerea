@@ -260,7 +260,7 @@ return [
     'register_url' => 'register',
     'password_reset_url' => 'password/reset',
     'password_email_url' => 'password/email',
-    'profile_url' => false,
+    'profile_url' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -292,11 +292,11 @@ return [
 
     'menu' => [
         // Navbar items:
-        [
-            'text' => 'search',
-            'search' => true,
-            'topnav' => true
-        ],
+        // [
+        //     'text' => 'search',
+        //     'search' => true,
+        //     'topnav' => true
+        // ],
         [
             'text' => 'Quienes somos',
             'url'  => '#',
@@ -311,36 +311,39 @@ return [
             'text' => 'Log in',
             'route'  => 'login',
             'topnav_right' => true,
-            'can' => 'login'
-        ],
-        [
-            'type'         => 'fullscreen-widget',
-            'topnav_right' => true,
+         
         ],
 
         // Sidebar items:
         
-        ['header' => 'USUARIOS',
-            'can' => 'administrador usuario',
-        ],
-
+        
         [
-            'text' => 'Roles',
-            'route' => 'admin.roles.index',
-            'icon' => 'far fa-fw fa-file',
-            'can' => 'administrador usuario'
-        ],
-        [
-            'text' => 'Permisos',
-            'route' => 'admin.permisos.index',
-            'icon' => 'far fa-fw fa-circle',
-            'can' => 'administrador usuario'
-        ],
-        [
-            'text' => 'Usuarios',
-            'route' => 'admin.asignar.index',
-            'icon' => 'fa fa-user',
-            'can' => 'administrador usuario'
+            'text'    => 'USUARIOS',
+            'icon'    => '',
+            'can'     => 'administrador usuario',
+            'submenu' => [
+                [
+                    'text' => 'Roles',
+                    'route' => 'admin.roles.index',
+                    'icon' => 'fas fa-user-tag',
+                    'icon_color' => 'red',
+                    'can' => 'administrador usuario'
+                ],
+                [
+                    'text' => 'Permisos',
+                    'route' => 'admin.permisos.index',
+                    'icon' => 'fas fa-unlock-alt',
+                    'icon_color' => 'red',
+                    'can' => 'administrador usuario'
+                ],
+                [
+                    'text' => 'Usuarios',
+                    'route' => 'admin.asignar.index',
+                    'icon' => 'fa fa-user',
+                    'icon_color' => 'red',
+                    'can' => 'administrador usuario'
+                ],
+            ],
         ],
 
         ['header' => 'IGLESIA'],
@@ -348,12 +351,12 @@ return [
         [
             'text' => 'Miembros',
             'route'  => 'admin.miembros.index',
-            'icon' => 'fa-solid fa-users',
+            'icon' => 'fas fa-user-friends',
         ],
         [
             'text' => 'Reuniones',
             'route'  => 'admin.reuniones.index',
-            'icon' => 'fa fa-users',
+            'icon' => 'fas fa-users',
         ],
         [
             'text' => 'Talleres y conferencias',
@@ -361,41 +364,48 @@ return [
             'icon' => 'fab fa-fw fa-buffer',
         ],
         [
-            'text' => 'Actividades',
+            'text'   => 'Actividades',
             'route'  => 'admin.actividades.index',
-            'icon' => 'fas fa-fw fa-user',
+            'icon'   => 'fas fa-tasks',
         ],
         [
-            'text' => 'Expositores',
+            'text'   => 'Expositores',
             'route'  => 'admin.expositores.index',
-            'icon' => 'fas fa-fw fa-user',
+            'icon'   => 'fas fa-chalkboard-teacher',
         ],
        
-        ['header' => 'Contactanos'],
         [
-            'text'       => 'Facebook',
-            'icon' => 'fa-brands fa-facebook-f',
-            'icon_color' => 'blue',
-            'url'        => '#',
+            'text' => 'Contactanos',
+            'icon'  =>'',
+            'submenu'=>[
+                [
+                    'text'       => 'Facebook',
+                    'icon'       => 'fab fa-facebook',
+                    'icon_color' => 'blue',
+                    'url'        => '#',
+                ],
+                [
+                    'text'       => 'Youtube',
+                    'icon_color' => 'red',
+                    'url'        => '#',
+                    'icon'       => 'fab fa-youtube',
+                ],
+                [
+                    'text'       => 'Whatsapp',
+                    'icon_color' => 'green',
+                    'url'        => '#',
+                    'icon'       => 'fab fa-whatsapp',
+                ],
+                [
+                    'text'       => 'Telefono',
+                    'icon_color' => 'blue',
+                    'url'        => '#',
+                    'icon'       => 'fas fa-mobile-alt',
+                ],
+            ]
         ],
-        [
-            'text'       => 'Youtube',
-            'icon_color' => 'red',
-            'url'        => '#',
-            'icon' => 'fa-brands fa-youtube',
-        ],
-        [
-            'text'       => 'Whatsapp',
-            'icon_color' => 'green',
-            'url'        => '#',
-            'icon' => 'fa-brands fa-whatsapp',
-        ],
-        [
-            'text'       => 'Telefono',
-            'icon_color' => 'black',
-            'url'        => '#',
-            'icon' => 'fa-solid fa-phone',
-        ],
+        
+       
     ],
 
     /*

@@ -13,9 +13,11 @@
         </div>
     @endif
     <div class="card">
+        @role('Administrador')
         <div class="card-header">
             <a class="btn btn-primary btn-sn" href="{{route('admin.talleres.create')}}">Agregar un nuevo evento</a>
         </div>
+        @endrole
         <div class="card-body">
             <table class="table table-striped">
                 <thead>
@@ -44,10 +46,13 @@
                         <button class="btn btn-info open-image" onclick="abrirVentana('{{ asset($taller->documento) }}')">Imagen</button>
 
                         </td>
+                        @role(['Administrador','Secretario'])
                         <td width="10px">
                             <a class="btn btn-primary btn-sm" href="{{route('admin.talleres.edit', $taller)}}">Editar</a>
                         </td>
-                        
+                        @endrole
+
+                        @role('Administrador')
                         <td width="10px">
                             <form action="{{route('admin.talleres.destroy', $taller)}}" method= "POST">
                                 @csrf
@@ -55,6 +60,7 @@
                                 <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                             </form>
                         </td>
+                        @endrole
                     </tr>
                     @endforeach
                 </tbody>

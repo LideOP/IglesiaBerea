@@ -13,9 +13,11 @@
         </div>
     @endif
     <div class="card">
+        @role(['Administrador','Secretario'])
         <div class="card-header">
             <a class="btn btn-outline-primary" href="{{route('admin.actividades.create')}}">Agregar una nueva actividad</a>
         </div>
+        @endrole
         <div class="card-body">
             <table class="table">
                 <thead class="thead-dark">
@@ -42,10 +44,12 @@
                             <button class="btn btn-info open-image" onclick="abrirVentana('{{ asset($actividade->documento) }}')">Imagen</button>
                         </td>
 
+                        @role(['Administrador','Secretario'])
                         <td width="10px">
                             <a class="btn btn-primary btn-sm" href="{{route('admin.actividades.edit', $actividade)}}">Editar</a>
                         </td>
-                        
+                        @endrole
+                        @role('Administrador')
                         <td width="10px">
                             <form action="{{route('admin.actividades.destroy', $actividade)}}" method= "POST">
                                 @csrf
@@ -53,6 +57,7 @@
                                 <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                             </form>
                         </td>
+                        @endrole
                     </tr>
                     @endforeach
                 </tbody>

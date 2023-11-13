@@ -16,7 +16,7 @@
 
     <div class="card">
 
-    
+
         @role('Administrador')
             <div class="card-header">
                 <a class="btn btn-info btn-lg float-right h-10 " href="{{route('admin.miembros.create')}}"><i class="fas fa-plus mb-1 mt-1 mr-2"></i>Registrar</a>
@@ -49,10 +49,13 @@
                         <td>{{$miembro->fecha_nac}}</td>
                         <td>{{$miembro->direccion}}</td>
                     
+                        @role(['Administrador','Secretario'])
                         <td width="10px">
                             <a class="btn btn-primary btn-sm" href="{{route('admin.miembros.edit', $miembro)}}">Editar</a>
                         </td>
+                        @endrole
                         
+                        @role('Administrador')
                         <td width="10px">
                             <form action="{{route('admin.miembros.destroy', $miembro)}}" method= "POST">
                                 @csrf
@@ -60,6 +63,7 @@
                                 <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                             </form>
                         </td>
+                        @endrole
                     </tr>
                     @endforeach
                 </tbody>

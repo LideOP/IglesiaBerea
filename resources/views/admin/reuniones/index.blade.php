@@ -14,9 +14,12 @@
         </div>
     @endif
     <div class="card">
+
+        @role('Administrador')
         <div class="card-header">
             <a class="btn btn-info btn-sn" href="{{route('admin.reuniones.create')}}">Agregar una nueva reunion</a>
         </div>
+        @endrole
         <div class="card-body">
             <table class="table table-striped">
                 <thead>
@@ -39,10 +42,13 @@
                         <td>{{$reunion->expositores->nombre}}</td>
                         <td>{{$reunion->tema}}</td>
                     
+                        @role(['Administrador','Secretario'])
                         <td width="10px">
                             <a class="btn btn-primary btn-sm" href="{{route('admin.reuniones.edit', $reunion)}}">Editar</a>
                         </td>
+                        @endrole
                         
+                        @role('Administrador')
                         <td width="10px">
                             <form action="{{route('admin.reuniones.destroy', $reunion)}}" method= "POST">
                                 @csrf
@@ -50,6 +56,7 @@
                                 <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                             </form>
                         </td>
+                        @endrole
                     </tr>
                     @endforeach
                 </tbody>
