@@ -260,7 +260,7 @@ return [
     'register_url' => 'register',
     'password_reset_url' => 'password/reset',
     'password_email_url' => 'password/email',
-    'profile_url' => true,
+    'profile_url' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -351,7 +351,7 @@ return [
         [
             'text' => 'Miembros',
             'route'  => 'admin.miembros.index',
-            'icon' => 'fa-solid fa-users',
+            'icon' => 'fas fa-user-friends',
         ],
         
 
@@ -367,11 +367,11 @@ return [
             'icon' => 'fab fa-fw fa-buffer',
         ],
 
-        [
-            'text'   => 'Actividades',
-            'route'  => 'admin.actividades.index',
-            'icon'   => 'fas fa-tasks',
-        ],
+        // [
+        //     'text'   => 'Actividades',
+        //     'route'  => 'admin.actividades.index',
+        //     'icon'   => 'fas fa-tasks',
+        // ],
         [
             'text'   => 'Expositores',
             'route'  => 'admin.expositores.index',

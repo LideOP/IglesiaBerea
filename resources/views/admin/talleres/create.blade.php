@@ -13,7 +13,7 @@
             {!! Form::open(['route' => 'admin.talleres.store','method' => 'POST', 'enctype' => 'multipart/form-data'])!!}
                 <div class="form-group">
                     {!! Form::label('nombre','Nombre')!!}
-                    {!! Form::text('nombre',null,['class'=>'form-control', 'placeholder' => 'Ingrese el titulo del taller'])!!}
+                    {!! Form::text('nombre',null,['class'=>'form-control', 'placeholder' => 'Ingrese nombre evento'])!!}
                     @error('nombre')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
@@ -51,7 +51,9 @@
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
+                @role(['Administrador'])
                 {!!Form::submit('Crear Evento',['class' => 'btn btn-info'])!!}
+                @endrole
             {!! Form::close() !!}
 
         </div>

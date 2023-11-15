@@ -15,11 +15,12 @@
 
     <div class="card">
 
-        @role('Administrador')
         <div class="card-header d-flex justify-content-between align-items-center">
+            @role('Administrador')
             <div>
                 <a class="btn btn-primary btn-lg mr-2" href="{{route('admin.reuniones.create')}}">Agregar una nueva reunión</a>
             </div>
+            @endrole
             <form action="{{route('admin.filtrarDia')}}" method="GET" class="form-inline">
                 @csrf
                 <label class="mr-2" for="filtroDia">Selecciona un dia:</label>
@@ -35,7 +36,6 @@
                 <button type="submit" class="btn btn-info btn-lg">Filtrar</button>
             </form>
         </div>
-
 
         <div class="card-body">
             <table class="table table-striped">

@@ -17,7 +17,7 @@
     <div class="card">
         @role('Administrador')
         <div class="card-header">
-            <a class="btn btn-primary btn-sn" href="{{route('admin.expositores.create')}}">Agregar una nueva reunion</a>
+            <a class="btn btn-primary btn-sn" href="{{route('admin.expositores.create')}}">Agregar una nuevo Expositor</a>
         </div>
         @endrole
         <div class="card-body">
@@ -50,7 +50,7 @@
                         <td width="10px">
                             <a class="btn btn-primary btn-sm" href="{{route('admin.expositores.edit', $expo)}}">Editar</a>
                         </td>
-                        @endrole
+                        
                         @role('Administrador')
                         <td width="10px">
                             <form action="{{route('admin.expositores.destroy', $expo)}}" method= "POST">

@@ -16,7 +16,9 @@
     <div class="card">
         
         <div class="card-header">
-            <a class="btn btn-primary btn-lg mr-2" href="{{ route('admin.talleres.create') }}">Agregar un nuevo evento</a>
+            @role(['Administrador'])
+                <a class="btn btn-primary btn-lg mr-2" href="{{ route('admin.talleres.create') }}">Agregar un nuevo evento</a>
+            @endrole
             <a class="btn btn-info btn-lg mr-2" href="{{route('admin.filtroActividades')}}">Actividades</a>
             <a class="btn btn-info btn-lg mr-2" href="{{route('admin.filtroConferencias')}}">Conferencias</a>
             <a class="btn btn-info btn-lg mr-2" href="{{route('admin.filtrarTalleres')}}">Talleres</a>
@@ -58,8 +60,10 @@
                         <td width="10px">
                             <form action="{{route('admin.talleres.destroy', $taller)}}" method= "POST">
                                 @csrf
+                                @role(['Administrador'])
                                 @method('delete')
                                 <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                @endrole
                             </form>
                         </td>
                         @endrole

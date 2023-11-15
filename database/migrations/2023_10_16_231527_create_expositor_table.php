@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('cargo');
             $table->integer('telefono');
             $table->string('documento')->nullable();
+            $table->string('foto',255);
 
             $table->timestamps();
         });
