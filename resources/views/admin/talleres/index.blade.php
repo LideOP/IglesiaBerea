@@ -41,13 +41,13 @@
                         <td>{{$taller->fecha}}</td>
                         <td>{{$taller->lugar}}</td>
                         <td>
-
                             <img src="{{asset($taller->documento)}}" alt="" class="img-fluid" width="80px">
                         </td>
+                        
                         <td width="10px">
                         <button class="btn btn-info open-image" onclick="abrirVentana('{{ asset($taller->documento) }}')">Imagen</button>
-
                         </td>
+
                         <td width="10px">
                             <a class="btn btn-primary btn-sm" href="{{route('admin.talleres.edit', $taller)}}">Editar</a>
                         </td>

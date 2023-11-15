@@ -25,7 +25,11 @@ Route::get('login',[HomeController::class,'index']);
 Route::get('profile',[HomeController::class,'profile']);
 Route::get('vision', [HomeController::class,'vista'])->name('vision');
 // Route::post('register',[HomeController::class,'register_login']);
+
 Route::resource('reuniones',ReunionesController::class)->names('admin.reuniones');
+Route::get('filtrarDia', [ReunionesController::class, 'filtrarReuniones'])->name('admin.filtrarDia');
+
+
 // rutas para talleres y conferencias
 Route::resource('talleres',TalleresConferenciasController::class)->names('admin.talleres');
 // Route::get('talleres',TalleresConferenciasController::class,'FiltrarPorTipoEvento');

@@ -54,8 +54,7 @@
                 <div class="form-group">
                     {!! Form::label('documento', 'Documento (Nuevo)') !!}
                     {!! Form::file('documento', ['class' => 'form-control']) !!}
-                </div>
-                @error('documento')
+                    @error('documento')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>

@@ -20,7 +20,8 @@ class ExpositoresController extends Controller
     }
     public function create()
     {
-        return view('admin.expositores.create');
+        $opciones = ['Pastor' => 'Pastor', 'Seminarista' => 'Seminarista', 'Externo' => 'Externo'];
+        return view('admin.expositores.create', compact('opciones'));
     }
     public function store(Request $request)
     {
@@ -28,8 +29,24 @@ class ExpositoresController extends Controller
             'nombre'=> 'required',
             'cargo'=> 'required',
             'telefono'=> 'required|numeric',
+            'foto'=> 'nullable'
         ]);
-       $expositor = expositor::create($request->all());
+        if ($request->hasFile('foto')) {
+            $foto = $request->file('foto');
+            $rutaDocumento = 'img/fotosExpositores/';
+            $filename =time();
+            $uploadSuccess = $request->file('foto')->move($rutaDocumento, $filename);
+            if ($uploadSuccess) {
+                $expositor = expositor::create([
+                    'nombre' => $request->input('nombre'),
+                    'cargo' => $request->input('cargo'),
+                    'telefono' => $request->input('telefono'),
+                    'foto' => $rutaDocumento . $filename,
+                ]);
+            }
+        } else {
+            $expositor = expositor::create($request->all());
+        }
        return redirect()->route('admin.expositores.index', $expositor)->with('info','Se aniadio un nuevo expositor');
     }
     public function show(expositor $expositore)
@@ -39,7 +56,8 @@ class ExpositoresController extends Controller
     }
     public function edit(expositor $expositore)
     {
-        return view('admin.expositores.edit', compact('expositore'));
+        $op = ['Pastor' => 'Pastor', 'Seminarista' => 'Seminarista', 'Externo' => 'Externo'];
+        return view('admin.expositores.edit', compact('expositore', 'op'));
     }
 
     /**
@@ -51,10 +69,25 @@ class ExpositoresController extends Controller
             'nombre'=> 'required',
             'cargo'=> 'required',
             'telefono'=> 'required|numeric',
+            'foto'=> 'required'
 
         ]);
-       $expositore->update($request->all());
-       return redirect()->route('admin.expositores.index', $expositore)->with('info','Se actualizado correctamente');
+        $fotoAnterior = $expositore->foto;
+        if ($request->hasFile('foto')) {
+            $foto = $request->file('foto');
+            $rutaDocumento = 'img/fotosExpositores/';
+            $filename =time();
+            $uploadSuccess = $request->file('foto')->move($rutaDocumento, $filename);
+            if ($uploadSuccess) {
+                if (!empty($expositore->foto)) {
+                    $this->eliminarFotoExistente($expositore->foto);
+                }
+                $expositore->foto = $rutaDocumento . $filename;
+            }
+        }
+
+       $expositore->update($request->except('foto'));
+       return redirect()->route('admin.expositores.index')->with('info','Se actualizado correctamente');
     }
 
     /**
@@ -66,5 +99,13 @@ class ExpositoresController extends Controller
         return redirect()->route('admin.expositores.index')->with('info','Se elimino correctamente');
 
     }
+    private function eliminarFotoExistente($foto)
+        {
+            // Verifica si el documento existe en el servidor y si es diferente de null
+            if ($foto && file_exists(public_path($foto))) {
+                // Elimina el documento existente del servidor
+                unlink(public_path($foto));
+            }
+        }
 
 }
