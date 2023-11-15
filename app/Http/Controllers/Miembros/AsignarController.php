@@ -14,6 +14,7 @@ class AsignarController extends Controller
     public function __construct()
     {
         $this->middleware('can:administrador usuario');
+
     }
 
     /**

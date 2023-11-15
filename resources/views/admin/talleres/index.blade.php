@@ -12,8 +12,9 @@
             <strong>{{session('info')}}</strong>
         </div>
     @endif
+    
     <div class="card">
-        @role('Administrador')
+        
         <div class="card-header">
             <a class="btn btn-primary btn-lg mr-2" href="{{ route('admin.talleres.create') }}">Agregar un nuevo evento</a>
             <a class="btn btn-info btn-lg mr-2" href="{{route('admin.filtroActividades')}}">Actividades</a>

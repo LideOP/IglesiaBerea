@@ -354,11 +354,7 @@ return [
             'icon' => 'fa-solid fa-users',
         ],
         
-        [
-            'text' => 'Expositores',
-            'route'  => 'admin.expositores.index',
-            'icon' => 'fas fa-fw fa-user',
-        ], 
+
         [
             'text' => 'Reuniones',
             'route'  => 'admin.reuniones.index',

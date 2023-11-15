@@ -9,9 +9,13 @@ use Spatie\Permission\Models\Permission;
 
 class RolesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
+
+    public function __construct()
+    {
+        $this->middleware('can:administrador usuario');
+    }
+    
     public function index()
     {
         $roles = Role::all();
