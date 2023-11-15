@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('cargo');
             $table->integer('telefono');
+            $table->string('documento')->nullable();
 
             $table->timestamps();
         });

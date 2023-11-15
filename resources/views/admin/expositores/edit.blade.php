@@ -29,7 +29,7 @@
 
                 <div class="form-group">
                     {!! Form::label('cargo','Cargo')!!}
-                    {!! Form::text('cargo',null,['class'=>'form-control', 'placeholder' => ''])!!}
+                    {!! Form::select('cargo', $op, $expositore->cargo,['class'=>'form-control', 'placeholder' => ''])!!}
                     @error('cargo ')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
@@ -43,6 +43,21 @@
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>
+
+                <div class="form-group">
+                    {!! Form::label('foto', 'Foto (Nuevo)') !!}
+                    {!! Form::file('foto', ['class' => 'form-control' ]) !!}
+                    @error('foto')
+                        <span class="text-danger">{{$message}}</span>
+                    @enderror
+                    @if (!empty($expositore->foto))
+                        <p>archivo: {{ basename($expositore->foto) }}</p>
+                    @endif
+
+
+                </div>
+
+
                 {!!Form::submit('Actualizar expositor',['class' => 'btn btn-info'])!!}
             {!! Form::close() !!}
 

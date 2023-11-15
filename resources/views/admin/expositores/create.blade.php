@@ -22,7 +22,7 @@
 
                 <div class="form-group">
                     {!! Form::label('cargo','Cargo')!!}
-                    {!! Form::text('cargo',null,['class'=>'form-control', 'placeholder' => 'Ingrese el cargo'])!!}
+                    {!! Form::select('cargo', $opciones, null, ['class' => 'form-control', 'placeholder' => 'Ninguno']) !!}                    
                     @error('cargo ')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
@@ -32,6 +32,13 @@
                     {!! Form::label('telefono','Telefono')!!}
                     {!! Form::text('telefono', null, ['class' => 'form-control', 'placeholder' => 'Solo puede ingresar números', 'oninput' => 'this.value = this.value.replace(/[^0-9]/g, "")', 'maxlength' => '11']) !!}
                     @error('telefono')
+                        <span class="text-danger">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    {!! Form::label('foto','Foto')!!}
+                    {!! Form::file('foto',null,['class'=>'form-control', 'accept' => 'image/*'])!!}
+                    @error('foto')
                         <span class="text-danger">{{$message}}</span>
                     @enderror
                 </div>

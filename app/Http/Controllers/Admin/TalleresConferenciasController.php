@@ -58,9 +58,7 @@ class TalleresConferenciasController extends Controller
             $taller = talleres::create($request->all());
         }
 
-        
-    //    $taller = talleres::create($request->all());
-    $op = ['Conferencia' => 'Conferencia', 'Taller' => 'Taller', 'Actividad' => 'Actividad'];
+        $op = ['Conferencia' => 'Conferencia', 'Taller' => 'Taller', 'Actividad' => 'Actividad'];
         
        return redirect()->route('admin.talleres.index', $taller)
        ->with('info','Se creo una nueva reunion');

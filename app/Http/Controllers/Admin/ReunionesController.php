@@ -13,8 +13,9 @@ class ReunionesController extends Controller
 {
     public function index()
     {
+        $filtroDia = null;
         $reuniones = reunions::all();
-        return view('admin.reuniones.index', compact('reuniones'));
+        return view('admin.reuniones.index', compact('reuniones', 'filtroDia'));
     }
 
     /**
@@ -27,7 +28,6 @@ class ReunionesController extends Controller
         return view('admin.reuniones.create')
         ->with('opciones',$opciones)
         ->with('expo',$expo);
-        // return view('admin.reuniones.create');
     }
 
     /**
@@ -42,10 +42,8 @@ class ReunionesController extends Controller
                 'hora_final'=> 'required|date_format:H:i',
                 'expositor_id'=> 'required',
                 'tema'=> 'required'
-
                 ]);
                     
- 
                 $reunion = reunions::create($request->all());
                 return redirect()->route('admin.reuniones.index', $reunion)->with('info','Se creo una nueva reunion');
     }
@@ -83,6 +81,14 @@ class ReunionesController extends Controller
     {
         $reunione->delete();
         return redirect()->route('admin.reuniones.index')->with('info','Se elimino correctamente');
+    }
+
+    public function filtrarReuniones(Request $request)
+    {
+        $filtroDia = $request->input('filtroDia');
+        $reuniones = reunions::where('dia', $filtroDia)->get();
+
+        return view('admin.reuniones.index', compact('reuniones', 'filtroDia'));
     }
 
 }

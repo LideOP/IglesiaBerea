@@ -13,6 +13,6 @@ class expositor extends Model
         return $this->hasMany(reunions::class,'expositor_id');
     }
     protected $table = 'expositor';
-    protected $fillable=['nombre','cargo','telefono'];
+    protected $fillable=['nombre','cargo','telefono','foto'];
 
 }
